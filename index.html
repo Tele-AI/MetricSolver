@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>metric-solver</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    .gallery-container-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .gallery-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 1000px;
+      position: relative;
+    }
+
+    .gallery-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #888;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .gallery-btn:hover {
+      color: #333;
+    }
+
+    .gallery {
+      width: 100%;
+      overflow: hidden;
+      margin: 0 10px;
+    }
+
+    .gallery-group {
+      display: none;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gallery-group.active {
+      display: grid;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+
+
+
+
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Metric-Solver: Sliding Anchored Metric Depth Estimation from a
+              Single Image</h1>
+
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/wangyouOVO">Tao Wen</a><sup>1,3,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://jiepengwang.github.io/">Jiepeng Wang</a><sup>3,*,‡</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=6aHx1rgAAAAJ&hl=zh-TW">Yabo Chen</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.xjtlu.edu.cn/zh/about/people/leadership/professor-shugong-xu">Shugong Xu</a><sup>2,†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=PXlNTokAAAAJ">Chi Zhang</a><sup>3,†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://xuelongli.cn/en.php">Xuelong Li</a><sup>3,†</sup>
+              </span>
+            </div>
+
+            <p><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author. <sup>‡</sup> Project leader. </p>
+
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shanghai University,</span>
+              <span class="author-block"><sup>2</sup>Xi’an Jiaotong-Liverpool University,</span>
+              <span class="author-block"><sup>3</sup>Institute of Artificial Intelligence (TeleAI)</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+               
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2504.12103" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/Tele-AI/MetricSolver" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+        <img id="teaser" src="./static/images/fig1_teaser.png" alt="Teaser Image" style="height: 100%;">
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">Metric-Solver</span> effectively addresses different in-the-wild
+          scenes with unknown camera settings. This model delivers precise metric depth predictions across a variety of
+          scenarios, including but not
+          limited to indoor and outdoor scenes, autonomous driving scenarios, and various datasets which are captured by
+          different cameras.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Accurate and generalizable metric depth estimation is crucial for various computer vision applications but
+              remains challenging due to the diverse depth scales encountered in indoor and outdoor environments. In
+              this paper, we introduce <span class="dnerf">Metric-Solver</span>, a novel sliding anchor-based metric
+              depth estimation method that
+              dynamically adapts to varying scene scales.</p>
+            <p>
+              Our approach leverages an anchor-based representation, where a reference depth serves as an anchor to
+              separate and normalize the scene depth into two components: scaled near-field depth and tapered far-field
+              depth. The anchor acts as a normalization factor, enabling the near-field depth to be normalized within a
+              consistent range while mapping far-field depth smoothly toward zero. Through this approach, any depth from
+              zero to infinity in the scene can be represented within a unified representation, effectively eliminating
+              the need to manually account for scene scale variations.</p>
+            <p> More importantly, for the same scene, the anchor can slide along the depth axis, dynamically adjusting
+              to different depth scales. A smaller anchor provides higher resolution in the near-field, improving depth
+              precision for closer objects while a larger anchor improves depth estimation in far regions.
+              This adaptability enables the model to handle depth predictions at varying distances and ensure strong
+              generalization across datasets.
+              Our design enables a unified and adaptive depth representation across diverse environments. Extensive
+              experiments demonstrate that <span class="dnerf">Metric-Solver</span> outperforms existing methods in both
+              accuracy and cross-dataset
+              generalization.
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Method overview. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method overview</h2>
+          <img id="teaser" src="./static/images/fig2_method.png" alt="Teaser Image" style="height: 80%;">
+        </div>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          Given an input image, we first employ a large-scale image encoder to extract latent features, as illustrated
+          in (a).
+          Next, these latent features, combined with the sampled anchor depth from the anchor pool, as shown in (b), are
+          fed into a two-branch decoder.
+          Here, the anchor represents a boundary between near and far, and is divided at the pixel level through the
+          anchor mask
+          \( m_{sm} \). During training, all different anchors have a chance to be randomly selected from the pool.
+          Then the two-branch decoder predicts near-depth \( d_{sn} \), anchor mask \( m_{sm} \), and far-depth \(
+          d_{tf} \), as depicted in (c).
+          Finally, the two depth representations are fused using the mask to generate the final complete depth
+          prediction, as demonstrated in (d).
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+
+        <!-- Results. -->
+
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Results: Depth Estimation and Reconstruction</h2>
+            <!-- Text to mul-modality video generation. -->
+            <h3 class="title is-4">Mono depth Estimation</h3>
+            <div class="content has-text-justified">
+              <p>
+                With <span class="dnerf">Metric-Solver</span>, depth estimation can be performed from a single monocular image, enabling monocular reconstruction of the environment.
+              </p>
+
+              <div style="width: 100%;">
+                <div class="gallery-container-wrapper">
+                  <div class="gallery-container">
+                    <button class="gallery-btn left-btn" onclick="prevPage()">&#10094;</button>
+
+                    <div class="gallery">
+
+                      <div class="gallery-group">
+                        <div class="gallery-item"><img src="./static/images_/0001.png" alt="图片1"></div>
+                        <div class="gallery-item"><img src="./static/images_/0003.png" alt="图片2"></div>
+                        <div class="gallery-item"><img src="./static/images_/0004.png" alt="图片3"></div>
+                        <div class="gallery-item"><img src="./static/images_/0026.png" alt="图片4"></div>
+
+                        <div class="gallery-item"><img class="gif" src="./static/res_gif/res0.gif" alt="GIF1"></div>
+                        <div class="gallery-item"><img class="gif" src="./static/res_gif/res2.gif" alt="GIF2"></div>
+                        <div class="gallery-item"><img class="gif" src="./static/res_gif/res3.gif" alt="GIF3"></div>
+                        <div class="gallery-item"><img class="gif" src="./static/res_gif/res25.gif" alt="GIF4"></div>
+                      </div>
+
+
+                      <div class="gallery-group">
+                        <!-- 第一行：静态图片 -->
+                        <div class="gallery-item"><img  src="./static/images_/0002.png" alt="图片1"></div>
+                        <div class="gallery-item"><img  src="./static/images_/0005.png" alt="图片1"></div>
+                        <div class="gallery-item"><img src="./static/images_/0015.png" alt="图片1"></div>
+                        <div class="gallery-item"><img  src="./static/images_/0029.png" alt="图片1"></div>
+                        
+                        <!-- 第二行：GIF -->
+                        <div class="gallery-item"><img class="gif" src="./static/res_gif/res1.gif" alt="GIF1" loop></div>
+                        <div class="gallery-item"><img class="gif" src="./static/res_gif/res4.gif" alt="GIF2" loop></div>
+                        <div class="gallery-item"><img class="gif" src="./static/res_gif/res14.gif" alt="GIF3" loop></div>
+                        <div class="gallery-item"><img class="gif" src="./static/res_gif/res28.gif" alt="GIF4" loop></div>
+                    </div>
+                    </div>
+
+                    <button class="gallery-btn right-btn" onclick="nextPage()">&#10095;</button>
+                  </div>
+                </div>
+              </div>
+              <!-- </div> -->
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+  </section>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+
+        <!-- Results. -->
+
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+
+            <!-- Text to mul-modality video generation. -->
+            <h3 class="title is-4">Mono video depth Estimation</h3>
+            <div class="content has-text-justified">
+              <p>
+               <span class="dnerf">Metric-Solver</span> supports metric depth estimation from video sequences, thereby facilitating the reconstruction of dynamic 4D environments.
+              </p>
+              <div calss="center">
+                <video src="static\videos\output_pre_0.02.mp4" width="100%" controls>
+                  <source src="static\videos\output_pre_0.02.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- </div> -->
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{wen2025metricsolver
+        author    = {Tao Wen and Jiepeng Wang and Yabo Chen and Shugong Xu and Chi Zhang and Xuelong Li},
+        title     = {Metric-Solver: Sliding Anchored Metric Depth Estimation from a Single Image},
+        journal   = {arXiv preprint arXiv:2504.12103},
+        year      = {2025},
+      }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2504.12103">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/Tele-AI" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script>
+  const galleryGroups = document.querySelectorAll('.gallery-group');
+  let currentPage = 0;
+
+  function showPage(pageIndex) {
+    galleryGroups.forEach((group, index) => {
+      if (index === pageIndex) {
+        group.classList.add('active');
+      } else {
+        group.classList.remove('active');
+      }
+    });
+  }
+
+  function prevPage() {
+    currentPage = (currentPage - 1 + galleryGroups.length) % galleryGroups.length;
+    showPage(currentPage);
+  }
+
+  function nextPage() {
+    currentPage = (currentPage + 1) % galleryGroups.length;
+    showPage(currentPage);
+  }
+
+  // 初始化显示第一页
+  showPage(currentPage);
+</script>
+
+<script>
+   const gifs = document.querySelectorAll('.gif');
+
+  // 为每个GIF添加点击事件
+  gifs.forEach(gif => {
+            gif.addEventListener('click', function() {
+                console.log('GIF clicked:', gif);  // 打印当前GIF的src
+                const currentSrc = gif.src;  // 获取原始src（去掉查询参数）
+                const timestamp = new Date().getTime();  // 获取时间戳
+                gif.src = `${currentSrc}?timestamp=${timestamp}`;  // 添加时间戳，确保每次重新加载
+            });
+        });
+</script>
+
+</html>
