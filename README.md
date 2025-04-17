@@ -16,7 +16,7 @@ Code is coming soon.
 If you find Metric-Solver useful for your work please cite:
 ```
 @article{wen2025metricsolver
-  author    = {Tao Wen and Jiepeng Wang and Yabo Chen and Shugong Xu and Chi Zhang and Xuelong Li},
+  author    = {Wen,Tao and Wang,Jiepeng and Chen,Yabo and Xu,Shugong and Zhang,Chi and Li,Xuelong},
   title     = {Metric-Solver: Sliding Anchored Metric Depth Estimation from a Single Image},
   journal   = {arXiv preprint arXiv:2504.12103},
   year      = {2025},
